@@ -7,7 +7,7 @@ import RenderData from './RenderData'
 const Helper = (props: any) => {
     const { data } = props;
     const [ref, inView] = useInView()
-    const [initialState,setInitialState]=useState(data)
+    const [initialState, setInitialState] = useState(data)
     const [shows, setShows] = useState({
         first: data.items[3].mixed_content_items,
         second: null,
@@ -27,9 +27,12 @@ const Helper = (props: any) => {
                 console.log(data1)
                 setShows(prevState => ({
                     ...prevState,
-                    second: data1.items[3].shows 
+                    second: data1.items[3].shows
                 }));
-            } else if (check == 2) {
+                // just for production 
+                setCheck(check + 1);
+            }
+            if (check == 2) {
                 data1 = await fetchShows(2)
                 console.log(data.items[0].shows)
                 setShows(prevState => ({
@@ -61,9 +64,9 @@ const Helper = (props: any) => {
                     seventh: data1.items[4].shows
                 }));
             }
-          
-                setCheck(check + 1);
-           
+
+            setCheck(check + 1);
+
 
         } catch (error) {
 
