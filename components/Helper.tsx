@@ -23,10 +23,10 @@ const Helper = (props: any) => {
         var data1: any;
         try {
             if (check == 1) {
-console.log(data);
+                
                 setShows(prevState => ({
                     ...prevState,
-                    second: initialState.items[4].shows 
+                    second: initialState.items[3].shows 
                 }));
             } else if (check == 2) {
                 data1 = await fetchShows(2)
