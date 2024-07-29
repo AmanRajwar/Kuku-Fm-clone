@@ -7,6 +7,7 @@ import RenderData from './RenderData'
 const Helper = (props: any) => {
     const { data } = props;
     const [ref, inView] = useInView()
+    const [initialState,setInitialState]=useState(data)
     const [shows, setShows] = useState({
         first: data.items[3].mixed_content_items,
         second: null,
@@ -22,10 +23,10 @@ const Helper = (props: any) => {
         var data1: any;
         try {
             if (check == 1) {
-
+console.log(data);
                 setShows(prevState => ({
                     ...prevState,
-                    second: data.items[4].shows // Example of adding a new key
+                    second: initialState.items[4].shows 
                 }));
             } else if (check == 2) {
                 data1 = await fetchShows(2)
