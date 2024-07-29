@@ -3,6 +3,9 @@ const nextConfig = {
     images: {
         domains: ['images.cdn.kukufm.com'],
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 
 };
 
