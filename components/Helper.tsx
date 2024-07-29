@@ -4,7 +4,7 @@ import { fetchShows } from '@/actions/fetch-data'
 import { useInView } from 'react-intersection-observer'
 import RenderData from './RenderData'
 
-const TopTrending = (props: any) => {
+const Helper = (props: any) => {
     const { data } = props;
     const [ref, inView] = useInView()
     const [shows, setShows] = useState({
@@ -68,7 +68,7 @@ const TopTrending = (props: any) => {
     }
 
     useEffect(() => {
-        if (inView && check>7) {
+        if (inView &&  check<7) {
             loadMoreMovies()
         }
     }, [inView])
@@ -112,4 +112,4 @@ const TopTrending = (props: any) => {
     )
 }
 
-export default TopTrending
+export default Helper

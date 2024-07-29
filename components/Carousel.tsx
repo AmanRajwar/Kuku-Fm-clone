@@ -1,10 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { carousel } from '@/constants';
 import Image from 'next/image';
 import Marquee from "react-fast-marquee";
-import { fetchShows } from '@/actions/fetch-data';
 
 
 
@@ -60,7 +58,7 @@ const Carousel = (props: any) => {
                       {item.title}                   
                        </h1>
                     <p className=" max-sm:text-xs  shadow-lg text-white font-grotesk  overflow-hidden" >
-                      Dummy text goes here
+                      {item.author.name}
                       </p>
                   </div>
                 </div>
