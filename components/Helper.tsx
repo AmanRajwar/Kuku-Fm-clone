@@ -27,7 +27,7 @@ const Helper = (props: any) => {
                 console.log(data1)
                 setShows(prevState => ({
                     ...prevState,
-                    second: data1.items[4].shows 
+                    second: data1.items[3].shows 
                 }));
             } else if (check == 2) {
                 data1 = await fetchShows(2)
@@ -79,7 +79,8 @@ const Helper = (props: any) => {
         <div>
 
             <RenderData title='Top 10 in India' data={shows.first} />
-            {check >= 2 && <RenderData title='Vip shows' data={shows.second} />}
+            {/* on production it is not working  */}
+            {/* {check >= 2 && <RenderData title='Vip shows' data={shows.second} />} */}
             {check >= 3 && <RenderData title='Trending' data={shows.third} />}
             {check >= 4 && <RenderData title='Best Of Romance' data={shows.fourth} />}
             {check >= 5 && <RenderData title='Best Of Motivation' data={shows.fifth} />}
