@@ -23,10 +23,11 @@ const Helper = (props: any) => {
         var data1: any;
         try {
             if (check == 1) {
-                
+                data1 = await fetchShows(1);
+                console.log(data1)
                 setShows(prevState => ({
                     ...prevState,
-                    second: initialState.items[3].shows 
+                    second: data1.items[4].shows 
                 }));
             } else if (check == 2) {
                 data1 = await fetchShows(2)
@@ -60,9 +61,9 @@ const Helper = (props: any) => {
                     seventh: data1.items[4].shows
                 }));
             }
-            setTimeout(() => {
+          
                 setCheck(check + 1);
-            }, 500);
+           
 
         } catch (error) {
 
