@@ -52,23 +52,24 @@ const Helper = (props: any) => {
                     ...prevState,
                     sixth: data1.items[3].shows
                 }));
-            }else if (check == 6) {
+            } else if (check == 6) {
                 data1 = await fetchShows(2);
                 setShows(prevState => ({
                     ...prevState,
                     seventh: data1.items[4].shows
                 }));
             }
+            setTimeout(() => {
+                setCheck(check + 1);
+            }, 500);
 
-            setCheck(check + 1);
-    
         } catch (error) {
 
         }
     }
 
     useEffect(() => {
-        if (inView &&  check<7) {
+        if (inView && check < 7) {
             loadMoreMovies()
         }
     }, [inView])
@@ -84,7 +85,7 @@ const Helper = (props: any) => {
             {check >= 7 && <RenderData title='Best Of Horror' data={shows.seventh} />}
 
             {/* loader  */}
-           {check < 7 && <div
+            {check < 7 && <div
                 ref={ref}
                 className='col-span-1 mt-16 flex items-center justify-center sm:col-span-2 md:col-span-3 lg:col-span-4'
             >
@@ -106,7 +107,7 @@ const Helper = (props: any) => {
                 </svg>
                 <span className='sr-only'>Loading...</span>
             </div>
-}
+            }
 
         </div>
     )
