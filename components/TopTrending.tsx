@@ -61,15 +61,14 @@ const TopTrending = (props: any) => {
             }
 
             setCheck(check + 1);
-            const abc = await fetchShows(2)
-            console.log("shows", abc)
+    
         } catch (error) {
 
         }
     }
 
     useEffect(() => {
-        if (inView || check>7) {
+        if (inView && check>7) {
             loadMoreMovies()
         }
     }, [inView])
