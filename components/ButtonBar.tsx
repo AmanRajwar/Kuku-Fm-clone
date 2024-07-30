@@ -6,7 +6,7 @@ const ButtonBar = () => {
     <section className=' mt-[70px] text-white 2xl:flex items-center max-md:mx-[30px]  mx-[105px]'>
       <div className='flex 2xl:w-[40%] justify-between'>
         {buttons.map((button, index) => (
-          <div key={button.label} className='  font-code font-semibold tracking-wider flex flex-col justify-center items-center cursor-pointer black-white'>
+          <div key={button.label} className='  font-code font-semibold tracking-wider flex flex-col justify-center items-center cursor-pointer black-white '>
             <Image
               className="max-sm:w-[60px] max-sm:h-[60px]  custom-glow "
               src={button.imgURL}
