@@ -69,7 +69,8 @@ const Helper = (props: any) => {
 
 
         } catch (error) {
-
+         console.log(error)
+         return null;
         }
     }
 
@@ -82,7 +83,7 @@ const Helper = (props: any) => {
         <div>
 
             <RenderData title='Top 10 in India' data={shows.first} />
-            {/* on production it is not working  */}
+                      {/* on production it is not working  */}
             {/* {check >= 2 && <RenderData title='Vip shows' data={shows.second} />} */}
             {check >= 2 && <RenderData title='Trending' data={shows.third} />}
             {check >= 3 && <RenderData title='Best Of Romance' data={shows.fourth} />}
