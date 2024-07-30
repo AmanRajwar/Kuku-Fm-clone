@@ -18,7 +18,7 @@ const Header = () => {
       className='fixed top-0 left-0 w-full z-50  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm bg-n-8'
     >
       <div className="flex justify-between items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <Link className="block max-sm:w-[5.8rem]  w-[12rem] xl:mr-8 my-4" href="/">
+        <Link className="block max-sm:w-[3rem]  max-sm:mr-4 max-sm:my-2 w-[12rem] xl:mr-8 my-4" href="/">
           <Image className=" invert rounded-full"
             src='/icons/kukufm.jpeg'
             width={60}

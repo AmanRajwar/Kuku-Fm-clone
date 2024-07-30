@@ -18,7 +18,7 @@ const RenderData: React.FC<RenderDataProps> = ({ title, data }) => {
             </h1>
             <div  className='  flex max-md:justify-center  flex-wrap gap-10  mt-15'>
                 {data.map((item, index) => (
-                    <div  key={item.id} className=' abc p-3 flex items-center flex-col w-[45%] md:w-[28%] lg:w-[20%] 2xl:w-[17%] overflow-hidden '>
+                    <div  key={item.id} className='cursor-pointer abc p-3 flex items-center flex-col w-[45%] md:w-[28%] lg:w-[20%] 2xl:w-[17%] max-sm:w-[40%] overflow-hidden '>
                     <Image
                         className=" rounded-lg w-full h-full object-cover object-right-center  z-4 transition-filter duration-300"
                         src={item.image}

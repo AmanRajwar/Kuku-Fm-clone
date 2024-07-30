@@ -22,42 +22,42 @@ const Helper = (props: any) => {
     async function loadMoreMovies() {
         var data1: any;
         try {
+            // if (check == 1) {
+            //     data1 = await fetchShows(1);
+            //     console.log(data1)
+            //     setShows(prevState => ({
+            //         ...prevState,
+            //         second: data1.items[3].shows
+            //     }));
+            //     // just for production 
+            //     setCheck(check + 1);
+            // }
             if (check == 1) {
-                data1 = await fetchShows(1);
-                console.log(data1)
-                setShows(prevState => ({
-                    ...prevState,
-                    second: data1.items[3].shows
-                }));
-                // just for production 
-                setCheck(check + 1);
-            }
-            if (check == 2) {
                 data1 = await fetchShows(2)
                 console.log(data.items[0].shows)
                 setShows(prevState => ({
                     ...prevState,
                     third: data1.items[0].shows
                 }));
-            } else if (check == 3) {
+            } else if (check == 2) {
                 data1 = await fetchShows(2);
                 setShows(prevState => ({
                     ...prevState,
                     fourth: data1.items[1].shows
                 }));
-            } else if (check == 4) {
+            } else if (check == 3) {
                 data1 = await fetchShows(2);
                 setShows(prevState => ({
                     ...prevState,
                     fifth: data1.items[2].shows
                 }));
-            } else if (check == 5) {
+            } else if (check == 4) {
                 data1 = await fetchShows(2);
                 setShows(prevState => ({
                     ...prevState,
                     sixth: data1.items[3].shows
                 }));
-            } else if (check == 6) {
+            } else if (check == 5) {
                 data1 = await fetchShows(2);
                 setShows(prevState => ({
                     ...prevState,
@@ -74,7 +74,7 @@ const Helper = (props: any) => {
     }
 
     useEffect(() => {
-        if (inView && check < 7) {
+        if (inView && check < 6) {
             loadMoreMovies()
         }
     }, [inView])
@@ -84,14 +84,14 @@ const Helper = (props: any) => {
             <RenderData title='Top 10 in India' data={shows.first} />
             {/* on production it is not working  */}
             {/* {check >= 2 && <RenderData title='Vip shows' data={shows.second} />} */}
-            {check >= 3 && <RenderData title='Trending' data={shows.third} />}
-            {check >= 4 && <RenderData title='Best Of Romance' data={shows.fourth} />}
-            {check >= 5 && <RenderData title='Best Of Motivation' data={shows.fifth} />}
-            {check >= 6 && <RenderData title='Best Of Religion' data={shows.sixth} />}
-            {check >= 7 && <RenderData title='Best Of Horror' data={shows.seventh} />}
+            {check >= 2 && <RenderData title='Trending' data={shows.third} />}
+            {check >= 3 && <RenderData title='Best Of Romance' data={shows.fourth} />}
+            {check >= 4 && <RenderData title='Best Of Motivation' data={shows.fifth} />}
+            {check >= 5 && <RenderData title='Best Of Religion' data={shows.sixth} />}
+            {check >= 6 && <RenderData title='Best Of Horror' data={shows.seventh} />}
 
             {/* loader  */}
-            {check < 7 && <div
+            {check < 6 && <div
                 ref={ref}
                 className='col-span-1 mt-16 flex items-center justify-center sm:col-span-2 md:col-span-3 lg:col-span-4'
             >

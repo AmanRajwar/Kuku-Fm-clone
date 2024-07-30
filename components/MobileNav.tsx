@@ -16,7 +16,7 @@ const MobileNav = () => {
             <Sheet>
                 <SheetTrigger asChild>
                   
-                    <HamburgerSvg className="lg:hidden sm:ml-[120px] cursor-pointer " width={70} height={70} color="white" />
+                    <HamburgerSvg className="  max-sm:h-[50px] lg:hidden sm:ml-[120px] cursor-pointer " width={70} height={70} color="white" />
                 </SheetTrigger>
                 <SheetContent side="left" className="border-none bg-dark-1">
                     <Link href="/" className="flex items-center gap-1">
